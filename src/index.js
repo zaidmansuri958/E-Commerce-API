@@ -31,3 +31,6 @@ mongoose.connect(process.env.DB)
         console.log(error)
     })
 
+app.get("/", function (req, res) {
+    res.send("working");
+})
