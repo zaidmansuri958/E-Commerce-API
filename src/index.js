@@ -8,8 +8,11 @@ const femalePantsRouter = require("./Routes/femalePantRoutes");
 const femaleTradionalRoutes = require("./Routes/femaleTraditionalRoutes");
 const femalePartyRoutes = require("./Routes/femalePartyRoutes");
 const femaleShoesRouter = require("./Routes/femaleShoeRoutes");
+const bestSellerRouter= require("")
 const app = express();
 const mongoose = require("mongoose");
+
+//https://rich-jade-agouti-wig.cyclic.app/maleTshirts
 
 app.use("/maleTshirts", maleTshirtRouter);
 app.use("/maleShirts", maleShirtRouter);
@@ -19,6 +22,7 @@ app.use("/femalePants", femalePantsRouter);
 app.use("/femaleParty", femalePartyRoutes);
 app.use("/femaleTraditional", femaleTradionalRoutes);
 app.use("/femaleShoes", femaleShoesRouter);
+app.use("/bestSeller", femaleShoesRouter);
 
 
 const PORT = process.PORT || 3000
