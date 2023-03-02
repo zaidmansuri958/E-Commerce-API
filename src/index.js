@@ -9,6 +9,9 @@ const femaleTradionalRoutes = require("./Routes/femaleTraditionalRoutes");
 const femalePartyRoutes = require("./Routes/femalePartyRoutes");
 const femaleShoesRouter = require("./Routes/femaleShoeRoutes");
 const bestSellerRouter= require("./Routes/bestSellerRoutes");
+const maleTopRouter=require("./Routes/maleTopRouter");
+const femaleTopRouter=require("./Routes/femaleTopRouter");
+const topDiscountRouter=require("./Routes/topDiscountRoutes")
 const app = express();
 const mongoose = require("mongoose");
 
@@ -23,6 +26,10 @@ app.use("/femaleParty", femalePartyRoutes);
 app.use("/femaleTraditional", femaleTradionalRoutes);
 app.use("/femaleShoes", femaleShoesRouter);
 app.use("/bestSeller", bestSellerRouter);
+app.use("/maleTop",maleTopRouter);
+app.use("/femaleTop",femaleTopRouter);
+app.use("/topDiscount",topDiscountRouter);
+
 
 
 const PORT = process.PORT || 3000
