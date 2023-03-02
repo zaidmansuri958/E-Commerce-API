@@ -22,7 +22,7 @@ app.use("/femalePants", femalePantsRouter);
 app.use("/femaleParty", femalePartyRoutes);
 app.use("/femaleTraditional", femaleTradionalRoutes);
 app.use("/femaleShoes", femaleShoesRouter);
-app.use("/bestSeller", femaleShoesRouter);
+app.use("/bestSeller", bestSellerRouter);
 
 
 const PORT = process.PORT || 3000
