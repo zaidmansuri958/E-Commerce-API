@@ -13,6 +13,7 @@ const maleTopRouter=require("./Routes/maleTopRouter");
 const femaleTopRouter=require("./Routes/femaleTopRouter");
 const topDiscountRouter=require("./Routes/topDiscountRoutes")
 const sliderRouter=require("./Routes/sliderRoutes")
+const categoryRouter=require("./Routes/categoryRoutes");
 const app = express();
 const mongoose = require("mongoose");
 
@@ -31,6 +32,7 @@ app.use("/maleTop",maleTopRouter);
 app.use("/femaleTop",femaleTopRouter);
 app.use("/topDiscount",topDiscountRouter);
 app.use("/sliders",sliderRouter);
+app.use("/categories",categoryRouter);
 
 
 
