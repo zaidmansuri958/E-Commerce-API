@@ -14,11 +14,13 @@ const femaleTopRouter=require("./Routes/femaleTopRouter");
 const topDiscountRouter=require("./Routes/topDiscountRoutes")
 const sliderRouter=require("./Routes/sliderRoutes")
 const categoryRouter=require("./Routes/categoryRoutes");
+const userRouter=require("./Routes/userRouter");
+const userOrderRouter=require(".//Routes/userOrderRoutes");
 const app = express();
 const mongoose = require("mongoose");
 
 //https://rich-jade-agouti-wig.cyclic.app/maleTshirts
-
+app.use(express.json())
 app.use("/maleTshirts", maleTshirtRouter);
 app.use("/maleShirts", maleShirtRouter);
 app.use("/maleShoes", maleShoesRouter);
@@ -33,6 +35,9 @@ app.use("/femaleTop",femaleTopRouter);
 app.use("/topDiscount",topDiscountRouter);
 app.use("/sliders",sliderRouter);
 app.use("/categories",categoryRouter);
+app.use("/user",userRouter);
+app.use("/userOrder",userOrderRouter);
+
 
 
 
