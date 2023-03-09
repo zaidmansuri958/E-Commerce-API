@@ -16,6 +16,7 @@ const sliderRouter=require("./Routes/sliderRoutes")
 const categoryRouter=require("./Routes/categoryRoutes");
 const userRouter=require("./Routes/userRouter");
 const userOrderRouter=require(".//Routes/userOrderRoutes");
+const videoRouter=require("./Routes/videoRoutes");
 const app = express();
 const mongoose = require("mongoose");
 
@@ -37,8 +38,7 @@ app.use("/sliders",sliderRouter);
 app.use("/categories",categoryRouter);
 app.use("/user",userRouter);
 app.use("/userOrder",userOrderRouter);
-
-
+app.use("/video",videoRouter);
 
 
 const PORT = process.PORT || 3000
