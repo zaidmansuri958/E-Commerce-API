@@ -40,6 +40,11 @@ const userOrderSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    
+    quantity: {
+        type: String,
+        required: true
+    },
     userID: {
         type: mongoose.Schema.Types.ObjectId,
         ref:"users",
