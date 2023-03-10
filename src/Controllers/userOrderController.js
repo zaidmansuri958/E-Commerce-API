@@ -2,7 +2,7 @@ const userOrder = require("../Models/userOrder");
 const userOrderModel = require("../Models/userOrder")
 
 const createOrder = async function (req, res) {
-    const { productID, productName, productDesc, productImg1, productImg2, productImg3, productPrice, size } = req.body;
+    const { productID, productName, productDesc, productImg1, productImg2, productImg3, productPrice,quantity,size } = req.body;
     const newOrder = new userOrderModel({
         productID: productID,
         productName: productName,
@@ -11,7 +11,9 @@ const createOrder = async function (req, res) {
         productImg2: productImg2,
         productImg3: productImg3,
         productPrice: productPrice,
+        quantity:quantity,
         size: size,
+
         userID: req.userID
     });
     try {
