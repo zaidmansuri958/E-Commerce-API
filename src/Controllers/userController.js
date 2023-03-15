@@ -51,8 +51,8 @@ const signIn = async function (req, res) {
         }
         const token = jsonwebtoken.sign({ email: existingUser.email, id: existingUser._id }, SECRET_KEY)
         res.status(201).json({ user: existingUser, token: token })
-    } 
-    
+    }
+
     catch (error) {
         console.log(error)
         res.status(500).json({ message: "Some thing went wrong" })
@@ -61,4 +61,14 @@ const signIn = async function (req, res) {
 
 }
 
-module.exports = { signUp, signIn }
+const getUser = async function (req, res) {
+    try {
+        const user = await userModel.findOne({ "_id": req.userID })
+        res.status(200).json(user)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "something went wrong" });
+    }
+}
+
+module.exports = { signUp, signIn,getUser}
