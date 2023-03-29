@@ -17,6 +17,7 @@ const categoryRouter=require("./Routes/categoryRoutes");
 const userRouter=require("./Routes/userRouter");
 const userOrderRouter=require(".//Routes/userOrderRoutes");
 const videoRouter=require("./Routes/videoRoutes");
+const likedRouter=require("./Routes/userLikedRouter");
 const app = express();
 const mongoose = require("mongoose");
 
@@ -39,9 +40,10 @@ app.use("/categories",categoryRouter);
 app.use("/user",userRouter);
 app.use("/userOrder",userOrderRouter);
 app.use("/video",videoRouter);
+app.use("/liked",likedRouter);
 
 
-const PORT = process.PORT || 3000
+const PORT = process.PORT || 5000
 mongoose.connect(process.env.DB)
     .then(function () {
         app.listen(PORT, function () {
