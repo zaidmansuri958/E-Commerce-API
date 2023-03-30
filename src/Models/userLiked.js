@@ -37,7 +37,7 @@ const userLikeSchema = mongoose.Schema({
     },
 
     size: {
-        type: String,
+        type: Object,
         required: true
     },
     
