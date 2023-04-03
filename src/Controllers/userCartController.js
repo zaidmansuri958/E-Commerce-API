@@ -1,8 +1,8 @@
-const userOrderModel = require("../Models/userOrder")
+const userCartModel = require("../Models/userCart")
 
-const createOrder = async function (req, res) {
+const createCart = async function (req, res) {
     const { productID, productName, productDesc, productImg1, productImg2, productImg3, productPrice,quantity,size } = req.body;
-    const newOrder = new userOrderModel({
+    const newCart = new userCartModel({
         productID: productID,
         productName: productName,
         productDesc: productDesc,
@@ -12,21 +12,22 @@ const createOrder = async function (req, res) {
         productPrice: productPrice,
         quantity:quantity,
         size: size,
+
         userID: req.userID
     });
     try {
-        await newOrder.save();
-        res.status(201).json(newOrder)
+        await newCart.save();
+        res.status(201).json(newCart)
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: "something went wrong" });
     }
 }
 
-const deleteOrder = async function (req, res) {
+const deleteCart = async function (req, res) {
     const id = req.params.id;
     try {
-        const order=await userOrderModel.findByIdAndRemove(id);
+        const cart=await userCartModel.findByIdAndRemove(id);
         res.status(202).json(order)
     } catch (error) {
         console.log(error);
@@ -34,10 +35,10 @@ const deleteOrder = async function (req, res) {
     }
 }
 
-const getOrder= async function (req, res) {
+const getCart = async function (req, res) {
     try {
-        const order = await userOrderModel.find({ userID: req.userID })
-        res.status(200).json(order)
+        const cart = await userCartModel.find({ userID: req.userID })
+        res.status(200).json(cart)
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: "something went wrong" });
@@ -45,4 +46,4 @@ const getOrder= async function (req, res) {
 
 }
 
-module.exports = { createOrder, getOrder, deleteOrder }
+module.exports = { createCart, getCart, deleteCart }

@@ -15,6 +15,7 @@ const topDiscountRouter=require("./Routes/topDiscountRoutes")
 const sliderRouter=require("./Routes/sliderRoutes")
 const categoryRouter=require("./Routes/categoryRoutes");
 const userRouter=require("./Routes/userRouter");
+const userCartRouter=require(".//Routes/userCartRoutes");
 const userOrderRouter=require(".//Routes/userOrderRoutes");
 const videoRouter=require("./Routes/videoRoutes");
 const likedRouter=require("./Routes/userLikedRouter");
@@ -38,6 +39,7 @@ app.use("/topDiscount",topDiscountRouter);
 app.use("/sliders",sliderRouter);
 app.use("/categories",categoryRouter);
 app.use("/user",userRouter);
+app.use("/userCart",userCartRouter);
 app.use("/userOrder",userOrderRouter);
 app.use("/video",videoRouter);
 app.use("/liked",likedRouter);
