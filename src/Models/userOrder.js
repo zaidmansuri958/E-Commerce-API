@@ -40,16 +40,20 @@ const userOrderSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    
+    status: {
+        type: String,
+        required: true
+    },
+
     quantity: {
         type: String,
         required: true
     },
     userID: {
         type: mongoose.Schema.Types.ObjectId,
-        ref:"users",
-        required:true
+        ref: "users",
+        required: true
     }
-},{timeStamps:true});
+}, { timeStamps: true });
 
-module.exports=mongoose.model("user_orders",userOrderSchema);
+module.exports = mongoose.model("user_orders", userOrderSchema);
